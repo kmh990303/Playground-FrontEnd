@@ -1,4 +1,4 @@
-import React, { ChangeEvent, memo, useEffect, useMemo, useRef, useState } from "react";
+import React, { ChangeEvent, memo, useEffect, useCallback, useMemo, useRef, useState } from "react";
 import Modal from "../UI/Modal";
 import { dummyData } from "../dummy/dummy";
 
@@ -37,39 +37,39 @@ const Com: React.FC<PropsType> = ({ num, setNum }) => {
     }, [])
 
 
-    const ChangeHandler = () => {
+    const ChangeHandler = useCallback(() => {
         if (text.current) {
             setPar(text.current.value);
         }
-    }
+    }, [])
 
-    const buttonClickHandler = () => {
+    const buttonClickHandler = useCallback(() => {
         modalRef.current?.open();
-    }
+    }, [])
 
-    const deleteHandler = (id: string) => {
+    const deleteHandler = useCallback((id: string) => {
         setDummy((prevState) => {
             return [...prevState.filter((data) => data.id !== id)]
         })
-    }
+    }, [])
 
-    const searchIdChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const searchIdChangeHandler = useCallback((e: ChangeEvent<HTMLInputElement>) => {
         setSearchId(e.target.value);
-    }
+    }, [])
 
-    const searchIdHandler = (id: string) => {
+    const searchIdHandler = useCallback((id: string) => {
         let result;
 
         result = dummy.find((data) => data.id === id);
 
         setFindResult(result);
-    }
+    }, [])
 
-    const clickHandler = () => {
+    const clickHandler = useCallback(() => {
         setNum((prevState) => {
             return prevState + 5;
         })
-    }
+    }, [])
 
     const specialNumber = useMemo(() => {
         return num + 1000;
