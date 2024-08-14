@@ -18,6 +18,6 @@ function App() {
   return (
     <RouterProvider router={router} />
   );
-}
+} //라우터 구현
 
 export default App;
