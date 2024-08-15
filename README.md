@@ -5,4 +5,4 @@
 
 <new 폴더에 작성>
 - 8/14 Tanstack-query를 이용한 http 통신 연습
-- 8/15 Tanstack-query 낙관적 업데이트 연습
+- 8/15 Tanstack-query 낙관적 업데이트 연습 // framer-motion 을 이용한 애니메이션 구현 연습
