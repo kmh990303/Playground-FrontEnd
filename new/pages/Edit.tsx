@@ -74,4 +74,29 @@ const Edit: React.FC = () => {
     )
 }
 
+
+
+    // const mutation = useMutation({
+    //     mutationFn: editData,
+    //     onMutate: async (data) => {
+    //         await queryClient.cancelQueries({
+    //             queryKey: ['dummyData']
+    //         });
+
+    //         const previousData = queryClient.getQueryData(['dummyData']);
+
+    //         queryClient.setQueryData(['dummyData'], data.name);
+
+    //         return { previousData };
+    //     },
+    //     onError: (error, data, context) => {
+    //         queryClient.setQueryData(['dummyData'], context?.previousData);
+    //     },
+    //     onSettled: () => {
+    //         queryClient.invalidateQueries({
+    //             queryKey: ['dummyData']
+    //         })
+    //     }
+    // }) 낙관적 업데이트
+
 export default Edit;
