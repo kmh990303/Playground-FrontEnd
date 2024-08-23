@@ -9,6 +9,11 @@ interface workType {
     description: string;
 }
 
+export const metadata = {
+  title: 'All Works',
+  description: 'Browse the wonderful works share by our vibrant community.',
+}
+
 const Works: React.FC = async () => {
     const works = await getWorks();
   
